@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from os import environ, path
+from os import environ,mkdir,  path
 from shutil import copytree, rmtree
 from sys import platform
 
@@ -10,6 +10,8 @@ def install():
     MCPYPATH = search_mcpy()
     if not path.isdir(MCPYPATH):
         mkdir(MCPYPATH)
+    if not path.isdir(path.join(MCPYPATH, 'mod')):
+        mkdir(path.join(MCPYPATH, 'mod'))
     if path.isdir(path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge')):
         rmtree(path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge'))
     copytree(get_file('pyforge'), path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge'))
