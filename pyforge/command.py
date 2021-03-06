@@ -1,6 +1,6 @@
-from Minecraft.command import commands
+import Minecraft.command as _command
 
-CommandBase = commands.CommandBase
+CommandBase = _commands.CommandBase
 
 def register_command(s, command):
-    commands.commands.setdefault(s, command)
+    _commands.commands.setdefault(s, command)
