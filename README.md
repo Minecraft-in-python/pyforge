@@ -1,17 +1,19 @@
 > python + forge = pyforge!
 # pyforge
-pyforge 是为 Minecraft-in-python 专门编写的开发 mod 的前置包.
+pyforge is a package for developing mods specifically written for Minecraft-in-python.
 
-## 安装
-pyforge 版本与 Minecraft-in-python 版本是一一对应的, 在下载/安装前, 你应该确认 Minecraft-in-python 的版本.
-
-安装:
+## Installation
+NOTE: The pyforge version corresponds to the Minecraft-in-python version, so you should check the
+Minecraft-in-python version before downloading/installing it.
 ```shell
-# 注意安装版本, 按回车进行安装
+# Download
+git clone https://github.com/Minecraft-in-python/pyforge.git
+cd pyforge
 ./install.py
 ```
-导入 pyforge:
+
+## Import pyforge:
 ```shell
-# 使用 -o 选项来导入 $MCPYPATH/lib/<version>/ 中的包
+# Use the -o option to import packages in $MCPYPATH/lib/<version>/
 pyrhon3 -m Minecraft -o pyforge
 ```
