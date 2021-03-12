@@ -2,17 +2,19 @@
 # pyforge
 pyforge is a modding api for Minecraft-in-python.
 
-## Install
-pyforge version and Minecraft-in-python version are corresponding one by one. 
-Before downloading / installing, you should confirm Minecraft-in-python version.
+## Installation
+**NOTE:** The pyforge version corresponds to the Minecraft-in-python version, so you should check the
+Minecraft-in-python version before downloading/installing it.
 
-Install:
+Install it:
 ```shell
-# Press the ENTER to install
+git clone https://github.com/Minecraft-in-python/pyforge.git
+cd pyforge/
 ./install.py
 ```
+
 Import pyforge:
 ```shell
-# Use -o opinion to import lib from$MCPYPATH/lib/<version>/
+# Use the -o option to import packages in $MCPYPATH/lib/<version>/
 pyrhon3 -m Minecraft -o pyforge
 ```
