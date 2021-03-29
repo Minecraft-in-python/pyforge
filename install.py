@@ -4,17 +4,19 @@ from os import environ,mkdir,  path
 from shutil import copytree, rmtree
 from sys import platform
 
+VERSION = '0.3.1'
+
 def install():
-    print('This is pyforge 0.3.1 installation script.')
+    print('This is pyforge %s installation script.' % VERSION)
     input('Press ENTER to install pyforge: ')
     MCPYPATH = search_mcpy()
     if not path.isdir(MCPYPATH):
         mkdir(MCPYPATH)
     if not path.isdir(path.join(MCPYPATH, 'mod')):
         mkdir(path.join(MCPYPATH, 'mod'))
-    if path.isdir(path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge')):
+    if path.isdir(path.join(MCPYPATH, 'lib', VERSION, 'pyforge')):
         rmtree(path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge'))
-    copytree(get_file('pyforge'), path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge'))
+    copytree(get_file('pyforge'), path.join(MCPYPATH, 'lib', VERSION, 'pyforge'))
     print('Done')
 
 def get_file(f):
