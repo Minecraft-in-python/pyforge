@@ -15,6 +15,6 @@ cd pyforge/
 
 Import pyforge:
 ```shell
-# Use the -o option to import packages in $MCPYPATH/lib/<version>/
-pyrhon3 -m Minecraft -o pyforge
+# Use the -L option to import packages in $MCPYPATH/lib/<version>/
+pyrhon3 -m Minecraft -L pyforge
 ```

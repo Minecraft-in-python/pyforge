@@ -4,7 +4,7 @@ from os import environ,mkdir,  path
 from shutil import copytree, rmtree
 from sys import platform
 
-VERSION = '0.3.1'
+VERSION = '0.3.2'
 
 def install():
     print('This is pyforge %s installation script.' % VERSION)
@@ -15,7 +15,7 @@ def install():
     if not path.isdir(path.join(MCPYPATH, 'mod')):
         mkdir(path.join(MCPYPATH, 'mod'))
     if path.isdir(path.join(MCPYPATH, 'lib', VERSION, 'pyforge')):
-        rmtree(path.join(MCPYPATH, 'lib', '0.3.1', 'pyforge'))
+        rmtree(path.join(MCPYPATH, 'lib', VERSION, 'pyforge'))
     copytree(get_file('pyforge'), path.join(MCPYPATH, 'lib', VERSION, 'pyforge'))
     print('Done')
 
