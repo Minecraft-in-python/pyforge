@@ -1,3 +1,3 @@
 from Minecraft.gui import frame
 
-DialogueFrame = frame.DialogueFrame
+Frame = frame.Frame

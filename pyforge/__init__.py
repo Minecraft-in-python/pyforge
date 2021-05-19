@@ -8,5 +8,6 @@ if utils.PYFORGEVERSION != VERSION:
 else:
     log_info('Welcome to use pyforge %s' % utils.PYFORGEVERSION['str'])
 
-def init():
+def main():
     get_game().add_info_ext('pyforge%s' % utils.PYFORGEVERSION['str'])
+    get_game().register_event('key_press', lambda a, b: log_info('You press a key'))
