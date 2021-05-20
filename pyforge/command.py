@@ -1,5 +1,6 @@
-import Minecraft.arguments as _arguments
-import Minecraft.command as _command
+import Minecraft.command.base as _base
+from Minecraft.command.commands import commands as _commands
+import Minecraft.command.arguments as _arguments
 
 BaseArgument = _arguments.BaseArgument
 StringArgument = _arguments.StringArgument
@@ -9,7 +10,7 @@ BooleanArgument = _arguments.BooleanArgument
 PositionArgument = _arguments.PositionArgument
 ArgumentCollection = _arguments.ArgumentCollection
 
-CommandBase = _commands.CommandBase
+CommandBase = _base.CommandBase
 
 def register_command(s, command):
-    _commands.commands.setdefault(s, command)
+    _commands.setdefault(s, command)
