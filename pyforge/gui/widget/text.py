@@ -1,3 +1,3 @@
-from Minecraft.gui.widget import text
+from Minecraft.gui.widget import text as _text
 
-TextEntry = text.TextEntry
+TextEntry = _text.TextEntry

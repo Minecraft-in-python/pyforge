@@ -1,3 +1,3 @@
-from Minecraft.gui.widget import image
+from Minecraft.gui.widget import image as _image
 
-Image = image.Image
+Image = _image.Image

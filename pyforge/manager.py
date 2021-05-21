@@ -30,8 +30,6 @@ class PyforgeManager(CommandBase):
             get_minecraft().dialogue.add_dialogue('pyforge %s' % PYFORGEVERSION['str'])
 
 
-register_command('pyforge', PyforgeManager)
-
 def add_widget():
     mod_button = Button((get_size()[0] - 200) / 2, 210, 200, 40, 'Mods')
     get_minecraft().guis['pause'].frame.add_widget(mod_button)
@@ -41,4 +39,5 @@ def on_resize(width, height):
     mod_button.x = (width - 200) / 2
     mod_button.y = 210
 
+register_command('pyforge', PyforgeManager)
 get_minecraft().register_event('init', add_widget)

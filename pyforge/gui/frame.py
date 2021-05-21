@@ -1,3 +1,3 @@
-from Minecraft.gui import frame
+from Minecraft.gui import frame as _frame
 
-Frame = frame.Frame
+Frame = _frame.Frame

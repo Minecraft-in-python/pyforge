@@ -1,4 +1,4 @@
-from Minecraft.gui.widget import button
+from Minecraft.gui.widget import button as _button
 
-Button = button.Button
-ChoseButton = button.ChoseButton
+Button = _button.Button
+ChoseButton = _button.ChoseButton
