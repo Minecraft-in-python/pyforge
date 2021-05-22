@@ -2,7 +2,8 @@
 	"pyforge.manager.text": [
 		"pyforge manager",
 		"%d mod(s) loaded:\n",
-		"Values in sys.path:\n"
+		"Values in sys.path:\n",
+		"Mod reloaded successfully"
 	],
-	"pyforge.pause_menu.mod_settings": "Mod Settings"
+	"pyforge.menu.mod_settings": "Mod Settings"
 }
