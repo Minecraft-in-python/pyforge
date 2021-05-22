@@ -31,14 +31,18 @@ class PyforgeManager(CommandBase):
 
 
 # 为菜单界面加入 Mod Settings 按钮
+mod_settings = None
+
 def add_widget():
-    mod_button = Button((get_size()[0] - 200) / 2, 210, 200, 40, assets.get_translation('pyforge.pause_menu.mod_settings'))
-    get_minecraft().guis['pause'].frame.add_widget(mod_button)
+    global mod_settings
+    mod_settings = Button((get_size()[0] - 200) / 2, 210, 200, 40, assets.get_translation('pyforge.pause_menu.mod_settings'))
+    get_minecraft().guis['pause'].frame.add_widget(mod_settings)
     get_minecraft().register_event('resize', on_resize)
 
 def on_resize(width, height):
-    mod_button.x = (width - 200) / 2
-    mod_button.y = 210
+    global mod_settings
+    mod_settings.x = (width - 200) / 2
+    mod_settings.y = 210
 
 register_command('pyforge', PyforgeManager)
 get_minecraft().register_event('init', add_widget)
