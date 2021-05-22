@@ -1,5 +1,7 @@
 import os
 
+from pyforge.assets import Assets
+from Minecraft.source import settings
 from Minecraft.utils.utils import *
 
 from pyforge import utils
@@ -18,6 +20,14 @@ def main():
     for mod in utils.mods.values():
         mod.on_load()
     get_game().add_info_ext('pyforge%s' % utils.PYFORGEVERSION['str'])
+    utils.assets = Assets(os.path.join(os.path.dirname(__file__), 'assets'))
+    # 载入玩家设置的语言
+    if not utils.assets.set_lang(settings['lang']):
+        # 第一次载入失败, 尝试载入英语语言文件
+        if not utils.assets.set_lang('en_US'):
+            # 再次载入失败, 退出游戏
+            log_err('No language file can load, exit')
+            exit(1)
     __import__('pyforge.manager')
 
 if utils.PYFORGEVERSION != VERSION:

@@ -1,0 +1,8 @@
+{
+	"pyforge.manager.text": [
+		"pyforge manager",
+		"%d mod(s) loaded:\n",
+		"Values in sys.path:\n"
+	],
+	"pyforge.pause_menu.mod_settings": "Mod Settings"
+}

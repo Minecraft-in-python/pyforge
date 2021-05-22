@@ -7,7 +7,7 @@ from pyforge.utils import *
 
 class PyforgeManager(CommandBase):
     formats = [ArgumentCollection(cmd=StringArgument('^(args|list|include-path|version)$'))]
-    description = ['pyforge manager',
+    description = [assets.get_translation('pyforge.manager.text')[0],
             '/pyforge args',
             '/pyforge list',
             '/pyforge include-path',
@@ -17,12 +17,12 @@ class PyforgeManager(CommandBase):
         if self.args['cmd'] == 'args':
             get_minecraft().dialogue.add_dialogue(' '.join(sys.argv))
         elif self.args['cmd'] == 'list':
-            text = '%d mod(s) loaded:\n' % len(mods)
+            text = assets.get_translation('pyforge.manager.text')[1] % len(mods)
             for mod in mods:
                 text += ' - %s\n' % mod
             get_minecraft().dialogue.add_dialogue(text)
         elif self.args['cmd'] == 'include-path':
-            text = 'Values in sys.path:\n'
+            text = assets.get_translation('pyforge.manager.text')[2]
             for d in sys.path:
                 text += ' - %s\n' % d
             get_minecraft().dialogue.add_dialogue(text)
@@ -30,8 +30,9 @@ class PyforgeManager(CommandBase):
             get_minecraft().dialogue.add_dialogue('pyforge %s' % PYFORGEVERSION['str'])
 
 
+# 为菜单界面加入 Mod Settings 按钮
 def add_widget():
-    mod_button = Button((get_size()[0] - 200) / 2, 210, 200, 40, 'Mods')
+    mod_button = Button((get_size()[0] - 200) / 2, 210, 200, 40, assets.get_translation('pyforge.pause_menu.mod_settings'))
     get_minecraft().guis['pause'].frame.add_widget(mod_button)
     get_minecraft().register_event('resize', on_resize)
 

@@ -16,9 +16,8 @@ def get_key(key):
         raise KeyError("'%s'" % key)
 
 mods = dict()
-
+assets = None
 MCPYVERSION = _utils.VERSION
-
 PYFORGEVERSION = {
         'major': 0,
         'minor': 3,
