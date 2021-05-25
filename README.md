@@ -16,5 +16,5 @@ cd pyforge/
 Import pyforge:
 ```shell
 # Use the --extlib=... option to import packages in $MCPYPATH/lib/<version>/
-python3 -m Minecraft --extlib=pyforge
+python3 -m minecraft --extlib=pyforge
 ```

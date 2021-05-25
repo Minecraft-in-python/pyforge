@@ -1,4 +1,4 @@
-from Minecraft.utils.utils import *
+from minecraft.utils.utils import *
 
 def toggle_gui(name):
     get_game().toggle_gui(name)

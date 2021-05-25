@@ -1,8 +1,8 @@
 import os
 
 from pyforge.assets import Assets
-from Minecraft.source import settings
-from Minecraft.utils.utils import *
+from minecraft.source import settings
+from minecraft.utils.utils import *
 
 from pyforge import utils
 
@@ -26,7 +26,7 @@ def main():
         # 第一次载入失败, 尝试载入英语语言文件
         if not utils.assets.set_lang('en_US'):
             # 再次载入失败, 退出游戏
-            log_err('No language file can load, exit')
+            log_err('No language file can be loaded, exit')
             exit(1)
     __import__('pyforge.manager')
 

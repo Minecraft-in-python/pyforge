@@ -1,3 +1,3 @@
-from Minecraft.gui import loading as _loading
+from minecraft.gui import loading as _loading
 
 Loading = _loading.Loading

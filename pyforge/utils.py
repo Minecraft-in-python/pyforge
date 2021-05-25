@@ -1,4 +1,4 @@
-import Minecraft.utils.utils as _utils
+import minecraft.utils.utils as _utils
 
 from pyglet.window import key as _keys
 

@@ -1,6 +1,6 @@
-import Minecraft.command.base as _base
-from Minecraft.command.commands import commands as _commands
-import Minecraft.command.arguments as _arguments
+import minecraft.command.base as _base
+from minecraft.command.commands import commands as _commands
+import minecraft.command.arguments as _arguments
 
 BaseArgument = _arguments.BaseArgument
 StringArgument = _arguments.StringArgument

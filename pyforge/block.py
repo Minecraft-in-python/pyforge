@@ -1,4 +1,4 @@
-import Minecraft.world.block as _block
+import minecraft.world.block as _block
 
 Block = _block.Block
 BlockColorizer = _block.BlockColorizer
