@@ -24,9 +24,22 @@ class Assets():
         return self.lang.get(name, name)
 
     def get_asset(self, path):
+        '''
+        Get resources from assets, the support paths are below:
+
+        | path prefix | extension | type |
+        | :---------- | :-------: | ---: |
+        |    /text    |  \*.txt   | str  |
+        |   others    |  \*.json  | dict |
+
+        :param: path => Where the asset store
+        :ret: See the table
+        '''
         if path.find('/') != -1:
             file_type = path.split('/')[0]
-            if file_type == 'textures':
+            if file_type == 'text':
+                return open(os.path.join(self.base_dir, path + '.txt'), 'r+').read()
+            elif file_type == 'textures':
                 return load_image('image.png', file=open(os.path.join(self.base_dir, path + '.png'), 'rb'))
             else:
                 return json.load(open(os.path.join(self.base_dir, path + '.json'), 'r+', encoding='utf-8'))
