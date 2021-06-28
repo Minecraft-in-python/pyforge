@@ -1,6 +1,6 @@
 import os
 
-from pyforge.assets import Assets
+from pyforge.assets import add_assets, get_resource_pack
 from minecraft.source import settings
 from minecraft.utils.utils import *
 
@@ -31,11 +31,11 @@ def main():
     for mod in utils.mods.values():
         mod.on_load()
     get_game().add_info_ext('pyforge%s' % utils.PYFORGEVERSION['str'])
-    utils.assets = Assets(os.path.join(os.path.dirname(__file__), 'assets'))
+    add_assets(os.path.join(os.path.dirname(__file__), 'assets'))
     # load language which player set
-    if not utils.assets.set_lang(settings['lang']):
+    if not get_resource_pack().set_lang(settings['lang']):
         # load failed, try to load English
-        if not utils.assets.set_lang('en_US'):
+        if not get_resource_pack().set_lang('en_US'):
             # fail again, exit game
             log_err('No language file can be loaded, exit')
             exit(1)
