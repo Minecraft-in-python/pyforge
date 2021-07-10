@@ -9,23 +9,15 @@ from pyforge.utils import *
 class pyforgeManager(CommandBase):
     formats = [ArgumentCollection(cmd=StringArgument('^(args|list|include-path|version)$'))]
     description = [get_translation('pyforge.manager.text')[0],
-            '/pyforge args',
             '/pyforge list',
-            '/pyforge include-path',
             '/pyforge version']
 
     def execute(self):
         global mods
-        if self.args['cmd'] == 'args':
-            get_minecraft().dialogue.add_dialogue(' '.join(sys.argv))
-        elif self.args['cmd'] == 'list':
+        if self.args['cmd'] == 'list':
             text = get_translation('pyforge.manager.text')[1] % len(mods)
             text += '\n'.join([' - ' + mod for mod in mods])
             get_minecraft().dialogue.add_dialogue(text)
-        elif self.args['cmd'] == 'include-path':
-            text = get_translation('pyforge.manager.text')[2]
-            text += '\n'.join([' - ' + value for value in sys.path])
-            get_minecraft().dialogue.add_dialogue(text) 
         elif self.args['cmd'] == 'version':
             get_minecraft().dialogue.add_dialogue('pyforge %s' % PYFORGEVERSION['str'])
 

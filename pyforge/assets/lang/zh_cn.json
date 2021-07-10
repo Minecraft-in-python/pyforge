@@ -1,9 +1,7 @@
 {
 	"pyforge.manager.text": [
 		"pyforge 管理",
-		"%d 个 mod 已加载:\n",
-		"sys.path 的值:\n",
-		"Mod 重载完成"
+		"%d 个 mod 已加载:\n"
 	],
 	"pyforge.menu.mod_settings": "Mod 设置"
 }
